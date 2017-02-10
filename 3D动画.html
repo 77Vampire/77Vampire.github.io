@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小妹妹</title>
+		<style type="text/css">
+			body{
+				/*初始化*/
+				margin: 0;
+				padding: 0;
+				border: 0;
+				background-image: url(3D动画/140-150210141T0.jpg);
+				/*background-size: 100% 100%;*/
+				background-repeat: no-repeat;
+				/*3D视觉效果*/
+				perspective: 1500px;
+			}
+			section{
+				/*宽高*/
+				width: 300px;
+				height: 300px;
+				/*定宽居中*/
+				/*margin: 100px auto;*/
+				left: 60%;
+				top: 200px;
+				/*添加背景颜色*/
+				background-color: red;
+				/*相对定位*/
+				position: relative;
+				/*执行3d动画*/
+				transform-style: preserve-3d;
+				/*动画块 */
+				animation: rotate 10s linear infinite;
+			}
+			/*对所以的div进行设置 设置宽高 定位*/
+			div{
+				width: 300px;
+				height: 300px;
+				/*绝对定位*/
+				position: absolute;
+			}
+			/*如果是class用.来调用  如果是id则用#来调*/
+			.before{
+				background-image: url(3D动画/1.JPG);
+				transform: translateZ(150px);
+			}
+			.after{
+				background-image: url(3D动画/2.JPG);
+				transform: translateZ(-150px);
+			}
+			.left{
+				background-image: url(3D动画/3.JPG);
+				transform: rotateY(90deg) translateZ(150px);
+			}
+			.right{
+				background-image: url(3D动画/4.JPG);
+				transform: rotateY(90deg) translateZ(-150px);
+			}
+			.top{
+				background-image: url(3D动画/5.JPG);
+				transform: rotateX(90deg) translateZ(-150px);
+			}
+			.bottom{
+				background-image: url(3D动画/6.JPG);
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			@keyframes rotate{
+				from{
+					/*如果不设置x，y，z则是绕着中心点旋转*/
+					transform: rotateY(0) rotateZ(0);
+				}
+				to{
+					transform: rotateY(720deg) rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--大框架-->
+		<section>
+			<!--前-->
+			<div class="before"></div>
+			<!--后-->
+			<div class="after"></div>
+			<!--左-->
+			<div class="left"></div>
+			<!--右-->
+			<div class="right"></div>
+			<!--上-->
+			<div class="top"></div>
+			<!--下-->
+			<div class="bottom"></div>
+		</section>
+	</body>
+</html>
